@@ -100,7 +100,7 @@ between samples in the input time series. Default: \code{deltat(x)}.}
 the local Lyapunov exponents are to be estimated. As this scale
 increases, one expects the local Lyapunov exponent estimates to converge
 towards the global estimates. All scales must be greater than one.
-Default: \code{as.integer(2\eqn{\mbox{\textasciicircum}}{^}(seq(min(floor(logb(scale.max,2)) - 2 , 10)) - 1))}
+Default: as.integer(2\eqn{\mbox{\textasciicircum}}{^}(seq(min(floor(logb(scale.max,2)) - 2 , 10)) - 1))
 where scale.max = Ne - 2 - \code{n.reference}.}
 
 \item{tlag}{the time delay between coordinates. Default: the decorrelation time of the autocorrelation function.}
