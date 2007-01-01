@@ -76,13 +76,6 @@
 ##
 ################################################
 
-###
-# Establish S3 inheritance
-###
-
-#setOldClass(c("summary.lyapunov", "list"))
-#setOldClass(c("summary.stationarity", "list"))
-
 ################################################
 ##
 ## Class chaoticInvariant

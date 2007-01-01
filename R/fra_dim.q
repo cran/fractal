@@ -56,6 +56,9 @@
   # replace these with NAs
   z[[1]][z[[1]] > 1] <- NA
 
+  if (length(z[[2]]) < 5)
+    stop("Insufficient number of scales calculated to form C2 statistics")
+
   chaoticInvariant(z,
     dimension   = seq(dimension),
     n.embed     = n.embed,
