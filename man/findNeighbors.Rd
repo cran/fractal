@@ -75,9 +75,7 @@ Friedman, J., Bentley, J. L., and Finkel, R. A.,
 }
 
 \seealso{
-\code{\link{FNN}},
-\code{\link{FNS}}.
-}
+\code{\link{FNN}}, \code{\link{FNS}}.}
 
 \examples{
 ## Calculate the 10 nearest neighbors for each 

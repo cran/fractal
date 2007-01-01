@@ -104,10 +104,7 @@ Cambridge University Press, 1997.
 }
 
 \seealso{
-\code{\link{embedSeries}},
-\code{\link{determinism}},
-\code{\link{timeLag}}.
-}
+\code{\link{embedSeries}}, \code{\link{determinism}}, \code{\link{timeLag}}.}
 
 \examples{
 ## Using the beamchaos data calculate the space 

@@ -72,10 +72,7 @@ Cambridge University Press, 1997.
 }
 
 \seealso{
-\code{\link{embedSeries}},
-\code{\link{corrDim}},
-\code{\link{infoDim}}.
-}
+\code{\link{embedSeries}}, \code{\link{corrDim}}, \code{\link{infoDim}}.}
 
 \examples{
 ## Using the third coordinate (\eqn{z} state) of a 

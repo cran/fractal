@@ -34,9 +34,7 @@ Annals Biomedical Engineering, \bold{23}, 491--505, 1995.
 }
 
 \seealso{
-\code{\link{DFA}},
-\code{\link{RoverS}}.
-}
+\code{\link{DFA}}, \code{\link{RoverS}}.}
 
 \examples{
 set.seed(100)

@@ -130,9 +130,7 @@ Components of a New Research Resource for Complex Physiologic Signals,
 }
 
 \seealso{
-\code{\link[ifultools]{logScale}},
-\code{\link{fractalBlock}}.
-}
+\code{\link[ifultools]{logScale}}, \code{\link{fractalBlock}}.}
 
 \examples{
 ## calculate the scaling exponent for a random 

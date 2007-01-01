@@ -114,10 +114,7 @@ Applications}, pp. 177--217, Birkhauser, Boston.
 }
 
 \seealso{
-\code{\link{fractalBlock}},
-\code{\link{hurstSpec}},
-\code{\link{lm}}.
-}
+\code{\link{fractalBlock}}, \code{\link{hurstSpec}}, \code{\link{lm}}.}
 
 \examples{
 ## create test series 

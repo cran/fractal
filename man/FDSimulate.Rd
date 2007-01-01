@@ -64,10 +64,7 @@ submitted to Journal of Computational and Graphical Statistics, 2002.
 }
 
 \seealso{
-\code{\link{FDWhittle}},
-\code{\link[wmtsa]{wavFDPBlock}},
-\code{\link[wmtsa]{wavFDPTime}}.
-}
+\code{\link{FDWhittle}}, \code{\link[wmtsa]{wavFDPBlock}}, \code{\link[wmtsa]{wavFDPTime}}.}
 
 \examples{
 ## create a time-varying FD parameter, linearly 

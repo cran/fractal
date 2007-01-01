@@ -50,10 +50,7 @@ embedding dimension is displayed. Default: \code{TRUE}.}
 }
 
 \seealso{
-\code{\link{infoDim}},
-\code{\link{corrDim}},
-\code{\link{lyapunov}}.
-}
+\code{\link{infoDim}}, \code{\link{corrDim}}, \code{\link{lyapunov}}.}
 
 \examples{
 ## create a faux object of class chaoticInvariant 

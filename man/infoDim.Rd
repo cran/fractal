@@ -155,16 +155,7 @@ Cambridge University Press.
 }
 
 \seealso{
-\code{\link{corrDim}},
-\code{\link{embedSeries}},
-\code{\link{timeLag}},
-\code{\link{chaoticInvariant}},
-\code{\link{lyapunov}},
-\code{\link{poincareMap}},
-\code{\link{spaceTime}},
-\code{\link{findNeighbors}},
-\code{\link{determinism}}.
-}
+\code{\link{corrDim}}, \code{\link{embedSeries}}, \code{\link{timeLag}}, \code{\link{chaoticInvariant}}, \code{\link{lyapunov}}, \code{\link{poincareMap}}, \code{\link{spaceTime}}, \code{\link{findNeighbors}}, \code{\link{determinism}}.}
 
 \examples{
 ## calculate the information dimension estimates 

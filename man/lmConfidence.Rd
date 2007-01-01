@@ -41,8 +41,7 @@ Cambridge University Press, Chapter 7.
 }
 
 \seealso{
-\code{\link{lmSimulate}}.
-}
+\code{\link{lmSimulate}}.}
 
 \examples{
 model <- lmModel("ppl",alpha=-0.9)

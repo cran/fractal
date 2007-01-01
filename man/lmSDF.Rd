@@ -75,10 +75,7 @@ Cambridge University Press, 1993, Chapter 9.
 }
 
 \seealso{
-\code{\link{lmModel}},
-\code{\link{lmACF}},
-\code{\link{lmSimulate}}.
-}
+\code{\link{lmModel}}, \code{\link{lmACF}}, \code{\link{lmSimulate}}.}
 
 \examples{
 old.plt <- par("plt")

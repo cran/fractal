@@ -38,9 +38,7 @@ These transients are removed from the output. Default: \code{10}.}
 a list of vectors named \code{x} and \code{y} corresponding to the X- and Y states of the Henon map, respectively.
 }
 \seealso{
-\code{\link{lorenz}},
-\code{\link{lorenz.ode}}.
-}
+\code{\link{lorenz}}, \code{\link{lorenz.ode}}.}
 
 \examples{
 plot(henon(),pch=".",cex=0.1)

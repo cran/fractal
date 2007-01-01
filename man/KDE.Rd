@@ -96,8 +96,7 @@ information of a time series and is included here for illustrative
 purposes.
 }
 \seealso{
-\code{\link{timeLag}}.
-}
+\code{\link{timeLag}}.}
 
 \examples{
 ## create a mixture of 2-D Gaussian distributed 

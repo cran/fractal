@@ -89,9 +89,7 @@ used to color the data and the regression line, respectively. Default: \code{c(1
 }
 
 \seealso{
-\code{\link{hurstBlock}},
-\code{\link{DFA}}.
-}
+\code{\link{hurstBlock}}, \code{\link{DFA}}.}
 
 \examples{
 ## construct a fractalBlock object 

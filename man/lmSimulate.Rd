@@ -70,12 +70,7 @@ effect, \emph{Biometrika}, \bold{74}, 95--102.
 }
 
 \seealso{
-\code{\link{lmModel}},
-\code{\link{lmACF}},
-\code{\link{lmSDF}},
-\code{\link{lmConfidence}},
-\code{\link{FDSimulate}}.
-}
+\code{\link{lmModel}}, \code{\link{lmACF}}, \code{\link{lmSDF}}, \code{\link{lmConfidence}}, \code{\link{FDSimulate}}.}
 
 \examples{
 old.plt <- par("plt")

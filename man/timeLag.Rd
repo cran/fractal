@@ -83,14 +83,7 @@ State Space Reconstruction in the Presence of Noise, \emph{Physica D}, \bold{51}
 }
 
 \seealso{
-\code{\link{embedSeries}},
-\code{\link{infoDim}},
-\code{\link{corrDim}},
-\code{\link{lyapunov}},
-\code{\link{findNeighbors}},
-\code{\link{KDE}},
-\code{\link{determinism}}.
-}
+\code{\link{embedSeries}}, \code{\link{infoDim}}, \code{\link{corrDim}}, \code{\link{lyapunov}}, \code{\link{findNeighbors}}, \code{\link{KDE}}, \code{\link{determinism}}.}
 
 \examples{
 ## estimate the proper time lag for an embedding 

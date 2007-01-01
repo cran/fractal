@@ -37,8 +37,7 @@ Long Memory Time Series, \emph{J. Time Series Analysis},
 }
 
 \seealso{
-\code{\link{hurstBlock}}.
-}
+\code{\link{hurstBlock}}.}
 
 \examples{
 S <- SDF(beamchaos)

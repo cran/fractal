@@ -21,11 +21,7 @@ between successive peaks of the QRS complex) for patients in normal sinus rhythm
 (record 16265 of the MIT-BIH database).}
 
 \seealso{
-\code{\link{beamchaos}},
-\code{\link{eegduke}},
-\code{\link{lorenz}},
-\code{\link{pd5si}}.
-}
+\code{\link{beamchaos}}, \code{\link{eegduke}}, \code{\link{lorenz}}, \code{\link{pd5si}}.}
 
 \examples{
 plot(ecgrr)

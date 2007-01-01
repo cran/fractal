@@ -80,13 +80,7 @@ Method of false nearest neighbors: A cautionary note,
 }
 
 \seealso{
-\code{\link{FNN}},
-\code{\link{embedSeries}},
-\code{\link{infoDim}},
-\code{\link{corrDim}},
-\code{\link{timeLag}},
-\code{\link{determinism}}.
-}
+\code{\link{FNN}}, \code{\link{embedSeries}}, \code{\link{infoDim}}, \code{\link{corrDim}}, \code{\link{timeLag}}, \code{\link{determinism}}.}
 
 \examples{
 ## perform False Nearest Strands tests on chaotic 

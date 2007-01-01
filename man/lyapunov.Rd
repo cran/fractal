@@ -137,12 +137,7 @@ The analysis of observed chaotic data in physical systems,
 }
 
 \seealso{
-\code{\link{embedSeries}},
-\code{\link{infoDim}},
-\code{\link{corrDim}},
-\code{\link{timeLag}},
-\code{\link{FNN}}.
-}
+\code{\link{embedSeries}}, \code{\link{infoDim}}, \code{\link{corrDim}}, \code{\link{timeLag}}, \code{\link{FNN}}.}
 
 \examples{
 ## Calculate the local Lyapunov spectrum for the 

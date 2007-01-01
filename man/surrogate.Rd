@@ -180,9 +180,7 @@ Florence, Italy, 4--5 May.
 }
 
 \seealso{
-\code{\link{infoDim}},
-\code{\link{corrDim}}.
-}
+\code{\link{infoDim}}, \code{\link{corrDim}}.}
 
 \examples{
 ## create surrogate data sets using circulant 

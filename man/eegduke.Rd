@@ -16,11 +16,7 @@ during seizure, one of several recorded channels. They are measured in microvolt
 represent measurements taken at time intervals of roughly \eqn{1/40} of a second.}
 
 \seealso{
-\code{\link{beamchaos}},
-\code{\link{ecgrr}},
-\code{\link{lorenz}},
-\code{\link{pd5si}}.
-}
+\code{\link{beamchaos}}, \code{\link{ecgrr}}, \code{\link{lorenz}}, \code{\link{pd5si}}.}
 
 \examples{
 plot(eegduke)

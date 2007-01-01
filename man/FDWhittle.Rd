@@ -66,9 +66,7 @@ Applications}, pp. 177--217, Birkhauser, Boston.
 }
 
 \seealso{
-\code{\link{hurstSpec}},
-\code{\link{FDSimulate}}.
-}
+\code{\link{hurstSpec}}, \code{\link{FDSimulate}}.}
 
 \examples{
 set.seed(100)

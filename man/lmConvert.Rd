@@ -25,9 +25,7 @@ Choices are: \code{"alpha"},\code{"delta"},\code{"HG"},\code{"HB"},\code{"beta"}
 numeric value representing the converted exponent.
 }
 \seealso{
-\code{\link{lmModel}},
-\code{\link{lmConfidence}}.
-}
+\code{\link{lmModel}}, \code{\link{lmConfidence}}.}
 
 \examples{
 model <- lmModel("ppl",alpha=-0.99)

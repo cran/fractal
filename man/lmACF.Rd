@@ -60,11 +60,7 @@ Cambridge University Press, 1993, Chapter 9.
 }
 
 \seealso{
-\code{\link{lmModel}},
-\code{\link{lmSDF}},
-\code{\link{lmSimulate}},
-\code{\link[ifultools]{ACVStoPACS}}.
-}
+\code{\link{lmModel}}, \code{\link{lmSDF}}, \code{\link{lmSimulate}}, \code{\link[ifultools]{ACVStoPACS}}.}
 
 \examples{
 models <- c("ppl","fdp","fgn")

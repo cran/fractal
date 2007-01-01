@@ -115,13 +115,7 @@ Cambridge University Press, 1993, Chapter 9.
 }
 
 \seealso{
-\code{\link{lmACF}},
-\code{\link{lmSDF}},
-\code{\link{lmSimulate}},
-\code{\link{lmConvert}},
-\code{\link{lmConfidence}},
-\code{\link{FDWhittle}}.
-}
+\code{\link{lmACF}}, \code{\link{lmSDF}}, \code{\link{lmSimulate}}, \code{\link{lmConvert}}, \code{\link{lmConfidence}}, \code{\link{FDWhittle}}.}
 
 \examples{
 lmModel("ppl", alpha=-2.0)

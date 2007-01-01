@@ -55,8 +55,7 @@ the usefulness of scaled asinh plots.
 }
 
 \seealso{
-\code{\link{hurstBlock}}.
-}
+\code{\link{hurstBlock}}.}
 
 \examples{
 hurstACVF(nile, Ascale=1000000, lag.min=3, lag.max=68)

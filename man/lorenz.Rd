@@ -22,11 +22,7 @@ then the system response is chaotic. The Lorenz is one the hallmark examples
 used in illustrating nonlinear deterministic chaotic motion.}
 
 \seealso{
-\code{\link{beamchaos}},
-\code{\link{ecgrr}},
-\code{\link{eegduke}},
-\code{\link{pd5si}}.
-}
+\code{\link{beamchaos}}, \code{\link{ecgrr}}, \code{\link{eegduke}}, \code{\link{pd5si}}.}
 
 \examples{
 plot(lorenz[,1], lorenz[,3], pch=".", col="blue")

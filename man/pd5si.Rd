@@ -35,11 +35,7 @@ circular path for 15 minutes, and from the subjects with Parkinson's disease
 as they walked for 6 minutes up and down a long hallway.}}
 
 \seealso{
-\code{\link{beamchaos}},
-\code{\link{ecgrr}},
-\code{\link{eegduke}},
-\code{\link{lorenz}}.
-}
+\code{\link{beamchaos}}, \code{\link{ecgrr}}, \code{\link{eegduke}}, \code{\link{lorenz}}.}
 
 \examples{
 plot(pd5si)

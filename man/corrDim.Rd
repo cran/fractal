@@ -182,16 +182,7 @@ of the American Statistical Association}, \bold{79}, 871--88.
 }
 
 \seealso{
-\code{\link{infoDim}},
-\code{\link{embedSeries}},
-\code{\link{timeLag}},
-\code{\link{chaoticInvariant}},
-\code{\link{lyapunov}},
-\code{\link{poincareMap}},
-\code{\link{spaceTime}},
-\code{\link{findNeighbors}},
-\code{\link{determinism}}.
-}
+\code{\link{infoDim}}, \code{\link{embedSeries}}, \code{\link{timeLag}}, \code{\link{chaoticInvariant}}, \code{\link{lyapunov}}, \code{\link{poincareMap}}, \code{\link{spaceTime}}, \code{\link{findNeighbors}}, \code{\link{determinism}}.}
 
 \examples{
 ## calculate the correlation dimension estimates 

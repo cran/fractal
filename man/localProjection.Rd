@@ -82,11 +82,7 @@ Time Series Analysis}, Cambridge University Press.
 }
 
 \seealso{
-\code{\link{embedSeries}},
-\code{\link{medianFilter}},
-\code{\link{timeLag}},
-\code{\link{FNN}}.
-}
+\code{\link{embedSeries}}, \code{\link{medianFilter}}, \code{\link{timeLag}}, \code{\link{FNN}}.}
 
 \examples{
 x      <- beamchaos@data

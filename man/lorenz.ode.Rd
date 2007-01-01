@@ -30,9 +30,7 @@ to produce chaotic motion.}
 a vector of three values representing the Lorenz states X, Y, and Z, respectively, evaluated with the specified parameter regime.
 }
 \seealso{
-\code{\link{lorenz}},
-\code{\link{henon}}.
-}
+\code{\link{lorenz}}, \code{\link{henon}}.}
 
 \examples{
 lorenz.ode(c(0.3,-0.1,1.0))

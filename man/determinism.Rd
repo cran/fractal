@@ -168,11 +168,7 @@ Physica D, \bold{73}, 38--48.
 }
 
 \seealso{
-\code{\link{embedSeries}},
-\code{\link{timeLag}},
-\code{\link{spaceTime}},
-\code{\link{surrogate}}.
-}
+\code{\link{embedSeries}}, \code{\link{timeLag}}, \code{\link{spaceTime}}, \code{\link{surrogate}}.}
 
 \examples{
 ## perform a determinism test for the beamchaos 

@@ -46,10 +46,7 @@ Applications}, 177--217, Birkhauser, Boston.
 }
 
 \seealso{
-\code{\link{hurstBlock}},
-\code{\link{hurstACVF}},
-\code{\link{dispersion}}.
-}
+\code{\link{hurstBlock}}, \code{\link{hurstACVF}}, \code{\link{dispersion}}.}
 
 \examples{
 RoverS(ocean)

@@ -72,11 +72,7 @@ Usage: \code{print(x)}.}
 }
 
 \seealso{
-\code{\link{timeLag}},
-\code{\link{FNN}},
-\code{\link{corrDim}},
-\code{\link{determinism}}.
-}
+\code{\link{timeLag}}, \code{\link{FNN}}, \code{\link{corrDim}}, \code{\link{determinism}}.}
 
 \examples{
 ## embed the beamchaos series in 10 dimensions 

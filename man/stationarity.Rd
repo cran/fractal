@@ -110,8 +110,7 @@ Series B, \bold{31}, pp. 140--9.
 }
 
 \seealso{
-\code{\link{hurstBlock}}.
-}
+\code{\link{hurstBlock}}.}
 
 \examples{
 ## assess the stationarity of the ecgrr series 

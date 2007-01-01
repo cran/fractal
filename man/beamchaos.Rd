@@ -31,11 +31,7 @@ Mechanical Engineering Department, University of Washington.
 }
 
 \seealso{
-\code{\link{ecgrr}},
-\code{\link{eegduke}},
-\code{\link{lorenz}},
-\code{\link{pd5si}}.
-}
+\code{\link{ecgrr}}, \code{\link{eegduke}}, \code{\link{lorenz}}, \code{\link{pd5si}}.}
 
 \examples{
 plot(beamchaos)

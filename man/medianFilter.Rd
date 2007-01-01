@@ -42,8 +42,7 @@ a vector containing the result and of the same length as
 the original time series.
 }
 \seealso{
-\code{\link{localProjection}}.
-}
+\code{\link{localProjection}}.}
 
 \examples{
 x      <- beamchaos@data

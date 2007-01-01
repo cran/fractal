@@ -105,11 +105,7 @@ for Long-Range Dependence: An Empirical Study, \emph{Fractals},
 }
 
 \seealso{
-\code{\link{hurstBlock}},
-\code{\link{fractalBlock}},
-\code{\link{HDEst}},
-\code{\link{lm}}.
-}
+\code{\link{hurstBlock}}, \code{\link{fractalBlock}}, \code{\link{HDEst}}, \code{\link{lm}}.}
 
 \examples{
 ## create test series 
