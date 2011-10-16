@@ -1,5 +1,5 @@
 ######################################################
-## S+Fractal nonlinear denoising functions
+## FRACTAL nonlinear denoising functions
 ##
 ##   medianFilter
 ##   localProjection

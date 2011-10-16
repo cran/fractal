@@ -1,5 +1,5 @@
 ################################################
-## S+Fractal nonlinear dynamics functionality
+## FRACTAL nonlinear dynamics functionality
 ##
 ##    corrDim (d2)
 ##    infoDim (d1)
@@ -120,7 +120,7 @@
     tlag        = as.integer(tlag),
     olag        = as.integer(olag),
     series.name = series.name,
-    series      = as.vector(x),
+    series      = asVector(x),
     xlab        = "ln(density)",
     ylab        = "< ln(neighborhood radius) >",
     invariant   = "information dimension")
@@ -204,7 +204,7 @@
     data.name <- deparseText(substitute(x))
 
   # coerce to a vector
-  x <- as.vector(x)
+  x <- asVector(x)
 
   # check input arguments
   if (is.null(tlag))
@@ -220,7 +220,7 @@
   checkScalarType(olag,"integer")
 
   z <- .Call( "RS_fractal_dimension_false_nearest_neighbors",
-    as.vector(x), as.integer(dimension), as.integer(tlag), as.integer(olag), as.numeric(rtol), as.numeric(atol),
+    asVector(x), as.integer(dimension), as.integer(tlag), as.integer(olag), as.numeric(rtol), as.numeric(atol),
     COPY=rep(FALSE,6),
     CLASSES=c("matrix", rep("integer", 3), rep("numeric", 2)),
     PACKAGE="ifultools")
@@ -254,7 +254,7 @@
     data.name <- deparseText(substitute(x))
 
   # coerce to a vector
-  x <- as.vector(x)
+  x <- asVector(x)
 
   # check input arguments
   if (is.null(tlag))
@@ -370,7 +370,7 @@
   # estimate the local Lyapunoiv spectrum about
   # each supplied reference
   z <- .Call( "RS_fractal_local_lyapunov_spectrum",
-    as.vector(x),
+    asVector(x),
     as.integer(dimension),
     as.integer(tlag),
     as.integer(olag),
@@ -455,7 +455,7 @@
     series.name <- deparseText(substitute(x))
 
   # ensure x is a numeric vector
-  x <- as.vector(x)
+  x <- asVector(x)
   storage.mode(x) <- "double"
 
   # perform argument checks

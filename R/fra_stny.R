@@ -1,5 +1,5 @@
 ################################################
-## S+Fractal stationarity data constructor
+## FRACTAL stationarity data constructor
 ## functions and corresponding methods
 ##
 ##::::::::::::::::::::::::::::::::::::::::::::::
@@ -30,13 +30,13 @@
   checkScalarType(center,"logical")
   checkScalarType(recenter,"logical")
 
-  series <- as.vector(x)
+  series <- asVector(x)
   storage.mode(series) <- "double"
 
   if (is(x,"signalSeries"))
     series.name <- x@title
   else
-    series.name <- deparse(substitute(x,frame=2))
+    series.name <- deparse(substitute(x))
 
   if (!is.numeric(x) && !is(x, "signalSeries"))
     stop ("Input data must be a time series")

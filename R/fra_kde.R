@@ -1,5 +1,5 @@
 ######################################################
-## S+Fractal multidimensional kernel density estimator
+## FRACTAL multidimensional kernel density estimator
 ##
 ## Class: KDE
 ## Constructor function: KDE
@@ -84,10 +84,7 @@
   title("KDE Perspective", adj=adj.main)
 
   splitplot(2,2,3)
-  if (is.R())
-    plot(x,style="contour",labcex=par("cex")*labex,nlevels=nlevels,add=TRUE)
-  else
-    plot(x,style="contour",labex=labex,nlevels=nlevels,add=TRUE)
+  plot(x,style="contour",labcex=par("cex")*labex,nlevels=nlevels,add=TRUE)
   title("KDE Contour", adj=adj.main)
 
   invisible(NULL)
@@ -102,7 +99,7 @@
 {
 
   if (numCols(attr(x,"training")) == 1){
-  	plot(as.vector(attr(x,"at")), as.vector(x),
+  	plot(as.vector(attr(x,"at")), asVector(x),
   	  xlab=attr(x,"data.name"), ylab="KDE", ...)
     return(invisible(NULL))
   }
@@ -138,17 +135,13 @@
   }
   else if (style == "perspective"){
 
-    if (is.R())
-      persp(interp(at[,1], at[,2], as.vector(x)),
+      persp(interp(at[,1], at[,2], asVector(x)),
         xlab=xlab, ylab=ylab, zlab=zlab,
         axes=TRUE, theta=theta, phi=phi,...)
-    else
-      persp(interp(at[,1], at[,2], as.vector(x)),
-        xlab=xlab, ylab=ylab, zlab=zlab, ...)
   }
   else if (style == "contour"){
 
-    contour(interp(at[,1], at[,2], as.vector(x)),
+    contour(interp(at[,1], at[,2], asVector(x)),
       xlab=xlab, ylab=ylab, ...)
   }
 

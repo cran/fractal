@@ -1,5 +1,5 @@
 ###################################################
-## S+Fractal determinism functionality
+## FRACTAL determinism functionality
 ##
 ##::::::::::::::::::::::::::::::::::::::::::::::
 ##
@@ -125,8 +125,7 @@
   # create random seeds
   if (seed > 0){
     set.seed(seed)
-    seeds <- ifelse1(is.R(), sample(.Machine$integer.max/100, size=n.realization),
-      rsample(.Machine$integer.max, size=n.realization))
+    seeds <- sample(.Machine$integer.max/100, size=n.realization)
   }
   else
     seeds <- rep(0,n.realization)

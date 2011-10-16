@@ -1,5 +1,5 @@
 ######################################################
-## S+Fractal nearest neighbor functionality
+## FRACTAL nearest neighbor functionality
 ##
 ##   findNeighbors
 ##

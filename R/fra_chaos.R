@@ -1,5 +1,5 @@
 ################################################
-## S+Fractal chaotic systems 
+## FRACTAL chaotic systems 
 ##
 ##   henon
 ##   lorenz.ode

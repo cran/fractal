@@ -1,5 +1,5 @@
 #######################################################################################
-# S+Fractal funtionality for long memory models
+# FRACTAL funtionality for long memory models
 #
 #   lmACF
 #   lmConfidence
@@ -506,7 +506,7 @@
 
   if (is.null(with.Nyquist)){
     if (!is.null(n.sample))
-      with.Nyquist <- is.zero(n.sample %% 2)
+      with.Nyquist <- (n.sample %% 2L) == 0L
     else
       with.Nyquist <- TRUE
   }

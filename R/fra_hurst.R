@@ -1,5 +1,5 @@
 ################################################
-# S+Fractal Hurst coefficient estimators and
+# FRACTAL Hurst coefficient estimators and
 # related statistical functions
 #
 #  Functions:
@@ -57,11 +57,8 @@
     if (polyfit.order == 1)
       return("x ~ 1 + t")
     else{
-      poly.str <- paste("x ~ 1 + t +",
-        paste("t^", seq(2,polyfit.order), "+", sep="",  collapse=""),
-          sep="", collapse="")
-
-      return(substring(poly.str, 1, nchar(poly.str) - 1))
+      return(paste(c("x ~ 1", "t", paste("I(t^", seq(2, polyfit.order), ")", collapse = " + ", sep = "")),
+                        collapse=" + ", sep = ""))
     }
   }
 
@@ -231,7 +228,8 @@
   xx <- log(scale)
   yy <- log(rmse)
   ww <- 1/seq(along=xx)
-
+  w <- NULL # quell R CMD check scoping issue
+  
   logfit   <- lm(y ~ 1 + x, data=data.frame(x=xx, y=yy, w=ww), weights=w)
   exponent <- logfit$coefficients["x"]
 
@@ -248,7 +246,7 @@
     overlap      =overlap,
     data.name    =data.name,
     sum.order    =sum.order,
-    series       =as.vector(x),
+    series       =asVector(x),
     logfit       =logfit)
 }
 
@@ -405,7 +403,8 @@
     xvar  <- scale[dStat > 0][-length(scale)]
     yvar  <- dStat[dStat > 0]
   }
-
+  w <- NULL # quell R CMD check scoping issue
+  
   # fit the log-log data weight the coefficients
   logfit <- ifelse1(lmfit,
     fit(y ~ 1 + x, data=data.frame(x=log(xvar), y=log(yvar), w=weight(yvar)), weights=w),
@@ -432,7 +431,7 @@
     overlap      =0,
     data.name    =data.name,
     sum.order    =0,
-    series       =as.vector(x),
+    series       =asVector(x),
     logfit       =logfit)
 }
 
@@ -506,7 +505,9 @@
       xvar <- xbox
       yvar <- ybox
     }
-
+  
+    w <- NULL # quell R CMD check scoping issue
+  
     logfit <- ifelse1(lmfit,
       fit(y ~ 1 + x, data=data.frame(x=xvar, y=yvar, w=weight(yvar)), weights=w),
       fit(y ~ 1 + x, data=data.frame(x=xvar, y=yvar)))
@@ -601,7 +602,7 @@
     overlap       = NULL,
     data.name     = data.name,
     sum.order     = 0,
-    series        = as.vector(x),
+    series        = asVector(x),
     logfit        = logfit,
     sdf           = sdf)
 }

@@ -1,5 +1,5 @@
 ################################################
-## S+Fractal nonlinear dynamics constructor
+## FRACTAL nonlinear dynamics constructor
 ## functions and corresponding methods
 ##
 ##::::::::::::::::::::::::::::::::::::::::::::::
@@ -364,25 +364,16 @@
   if (nchar(main))
     mtext(main, cex=main.cex, adj=adj, line=main.line)
 
-  if (legend){
-
-  	if (is.R()){
-      legend("topleft",
-        title="SLOPES",
+  if (legend)
+  {
+  	legend("topleft",
+          title="SLOPES",
 	      legend = paste(paste("DIM", xatt$dimension),round(xatt$slope, 3), sep=": "),
 	      lty=lty,
 	      pch=iy,
 	      col=iy,
 	      text.col=iy)
-  	}
-  	else{
-      key(title="SLOPES",
-	     text =list(xatt$dimension, adj=1, col=iy),
-	     lines=list(pch=iy,type=plot.type, lty=lty, col=iy),
-	     text =list(round(xatt$slope, 3), adj=1, col=iy),
-	     corner=c(0,1), cex=cex)
-  	}
-  }
+   }
   invisible(NULL)
 }
 
@@ -577,23 +568,10 @@
   # add key if requested
   if (key){
 
-  	if (is.R()){
-
   		legend("topright",
   		  legend=c(xatt$stat.name, paste(xatt$exponent.name,"=",round(exponent,3))),
   		  lty=lty, col=col, pch=c(18,-1))
-  	}
-  	else{
-      keylist <- list(lines=list( type=c("o","l"), pch=c(18,0), lty=lty, col=col),
-        text = list(c(xatt$stat.name, paste(xatt$exponent.name,"=",round(exponent,3))),adj=0, cex = 1 ),
-        border = 1, cex = 1.5 )
 
-      usr <- par("usr")
-      gap <- 0.05
-      dx  <- diff(usr[1:2]) * gap
-      dy  <- diff(usr[3:4]) * gap
-      autoKey(x=rescale(xdata,usr[1]+dx,usr[2]-dx), y=rescale(ydata,usr[3]+dy,usr[4]-dy), arg=keylist)
-  	}
   }
 
   invisible(NULL)
@@ -776,7 +754,7 @@
       points(xdata, ydata, pch=pch, cex=cex, col=col, ...)
     }
     else
-      invisible(ifelse1(is.R(), scatterplot3d(as.matrix(z), ...), spin(z)))
+      invisible(scatterplot3d(as.matrix(z), ...))
 
     invisible(NULL)
   }
@@ -861,7 +839,7 @@
     par(new=TRUE)
     p <- boxplot(x[[i]], ylim=ylim, boxcol=col[i],
       range=range, whisklty=whisklty, boxwex=boxwex, cex=cex, ..., plot=TRUE)
-    lines(ifelse1(is.R(), seq(length(x[[i]])), p), x.mean[[i]], col=col[i], lwd=2)
+    lines(seq(length(x[[i]])), x.mean[[i]], col=col[i], lwd=2)
   }
 
   invisible(NULL)
@@ -1038,7 +1016,7 @@
   matplot(x=xx, y=yy, col=color, lty=lty, type="l", pch=pch,
     xlab=xlab, ylab=ylab, add=add, cex=cex)
 
-  em <- ifelse1(is.R(), c(strwidth("m"), strheight("m")), par("1em"))
+  em <- c(strwidth("m"), strheight("m"))
 
   text(x=par("usr")[2] + em[1], y=yy[rows, iy],
     labels=paste("p =", round(iy * xatt$probability,4)),
@@ -1111,7 +1089,7 @@
 
   xatt <- attributes(x)
 
-  z <- list(delta=xatt$delta, "innovations\nvariance"=xatt$innov, "tvfd\nsimulation"=as.vector(x))
+  z <- list(delta=xatt$delta, "innovations\nvariance"=xatt$innov, "tvfd\nsimulation"=asVector(x))
   plots <- c(delta, innovations.var, simulation)
   if (!any(plots))
     stop("Must specify at least one variable to plot: simulation, delta, or innovations.var")
@@ -1121,3 +1099,5 @@
 
   invisible(NULL)
 }
+
+"asVector" <- function(x) if (inherits(x, "signalSeries")) x@data else as.vector(x)

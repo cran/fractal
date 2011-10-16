@@ -1,5 +1,5 @@
 ################################################
-## S+Fractal surrogate data constructor
+## FRACTAL surrogate data constructor
 ## functions and corresponding methods
 ##
 ##::::::::::::::::::::::::::::::::::::::::::::::
@@ -26,7 +26,7 @@
   else
     series.name <- deparseText(substitute(x))
 
-  series   <- as.vector(x)
+  series   <- asVector(x)
   n.sample <- length(x)
 
   # check seed
@@ -181,7 +181,7 @@
   series.name <- xatt$series.name
   surrname    <- paste(upperCase(xatt$method),"Surrogate")
   series      <- xatt$series
-  surrog      <- as.vector(x)
+  surrog      <- asVector(x)
   series.time <- ifelse1(is(series, "signalSeries"),
     as(positions(series),"numeric"), time(series))
 

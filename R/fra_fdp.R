@@ -1,5 +1,5 @@
 ######################################################
-## S+Fractal fractionally differenced process functions
+## FRACTAL fractionally differenced process functions
 ##
 ##   FDSimulate
 ##   FDWhittle
