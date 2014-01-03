@@ -107,7 +107,7 @@
   	tag  <- "ACVF"
   }
 
-  create.signalSeries(data,
+  wmtsa::create.signalSeries(data,
     position=list(from=ifelse1(partial,1,0), by=1, length=length(data), units="lag"),
     title.data=paste(upperCase(x$model), "(", exponent, ") ", tag, sep=""),
     documentation=paste(tag, " for ", upperCase(x$model), "(", exponent, ") process", sep=""),
@@ -133,7 +133,7 @@
       "delta on [0, 0.5), ",
       "or HG on [0.5, 1)")
 
-  x  <- create.signalSeries(x)
+  x  <- wmtsa::create.signalSeries(x)
   N  <- length(x)
   a  <- N^(1 + alpha)
   sd <- sqrt((variance(as.numeric(x), unbiased=FALSE) * a)/(a - 1))
@@ -566,7 +566,7 @@
   if (!as.logical(length(sdf)))
     stop("SDF length is zero. Check model parameters.")
 
-  create.signalSeries(sdf,
+  wmtsa::create.signalSeries(sdf,
     position=list(from=from, by=by, units="frequency"),
     title.data=paste(tag, "(", exponent, ") SDF", sep=""),
     documentation=paste("SDF for ", tag, "(", exponent, ") process", sep=""),
@@ -626,8 +626,8 @@
     Yj[1]     <- sqrt(Sj[1]) * rn[1]
     Yj[N + 1] <- sqrt(Sj[N + 1]) * rn[M]
     js        <- 2:N
-    Yj[js] <- sqrt(0.5 * Sj[js]) * complex(r=rn[2 * (1:(N - 1))],
-      i=rn[2 * (1:(N - 1)) + 1])
+    Yj[js] <- sqrt(0.5 * Sj[js]) * complex(real=rn[2 * (1:(N - 1))],
+      imaginary=rn[2 * (1:(N - 1)) + 1])
     Re(fft(c(Yj, Conj(rev(Yj[js])))))[1:N]/sqrt(M)
   }
 
@@ -709,7 +709,7 @@
   	else
   	  data <- DHMgenSim(Sj, rn=rn)[1:n.sample] + mean
 
-    create.signalSeries(data,
+    wmtsa::create.signalSeries(data,
       position=list(from=from, by=sampling.interval, units="time"),
       title.data=paste(tag, "(", exponent, ") ", "simulation", sep=""),
       documentation=paste("simulation of ", tag, "(", exponent, ") process", sep=""))

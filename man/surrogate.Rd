@@ -53,7 +53,7 @@ over normalized frequencies \eqn{f_k=k/(2N)}{f(k)=k/(2N)}
 for \eqn{k=0,\ldots,N}{k=0,...,N} where \eqn{N} is the number
 of samples in the original time series. This argument is only
 used for the circulant embedding method.
-Default: \code{NULL} unless the circulant embedding method is used, and then it is \code{SDF(x, method="multitaper", recenter=TRUE, taper=h, single.sided=T)} where
+Default: \code{NULL} unless the circulant embedding method is used, and then it is \code{sapa::SDF(x, method="multitaper", recenter=TRUE, taper=h, single.sided=T)} where
 \code{h = taper(type="sine", n.sample=N, n.taper=5, norm=TRUE)}.}
 
 \item{seed}{a positive integer representing the initial seed value to use

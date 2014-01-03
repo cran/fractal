@@ -62,13 +62,13 @@
   if (significance <= 0.0 || significance >= 1.0)
     stop("Significance out of range: 0 < significance < 1")
 
-  z <- .Call( "RS_fractal_stationarity_priestley_subba_rao",
+  z <- itCall( "RS_fractal_stationarity_priestley_subba_rao",
     series, as.double(sampling.interval),
     as.integer(n.taper), as.integer(n.block), as.double(significance),
-    center, recenter,
-    COPY=rep(FALSE,7),
-    CLASSES=c("matrix","numeric","integer","integer","numeric","logical","logical"),
-    PACKAGE="ifultools")
+    center, recenter)
+    #COPY=rep(FALSE,7),
+    #CLASSES=c("matrix","numeric","integer","integer","numeric","logical","logical"),
+    #PACKAGE="ifultools")
 
   z[[3]] <- as.vector(z[[3]])
 

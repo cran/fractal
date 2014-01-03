@@ -107,7 +107,7 @@
   data.name <- deparse(substitute(x))
 
   # convert sequence to signalSeries class
-  x <- create.signalSeries(x)
+  x <- wmtsa::create.signalSeries(x)
 
   # check overlap argument
   if ((overlap < 0) | (overlap >= 1))
@@ -298,7 +298,7 @@
 
   # estimates long memory parameters by linear regression of scaled asinh
   # of ACVF vs log(lag) over intermediate lag values.
-  x <- create.signalSeries(x)@data
+  x <- wmtsa::create.signalSeries(x)@data
   n.sample <- length(x)
 
   # evaluate autocovariance function (ACVF)
@@ -329,7 +329,7 @@
   scale.ratio=2, weight=function(x) rep(1,length(x)), fit=lm)
 {
   # convert input to signalSeries class
-  x <- create.signalSeries(x)
+  x <- wmtsa::create.signalSeries(x)
 
   # initialize variables
   n.sample <- length(x)
@@ -465,7 +465,7 @@
 
   # calculate single-sided SDF estimate with a normalized
   # spectral resolution of 1/N
-  sdf <- SDF(x, method=sdf.method, single.sided=TRUE, npad=length(x), ...)
+  sdf <- sapa::SDF(x, method=sdf.method, single.sided=TRUE, npad=length(x), ...)
   attr(sdf,"series.name") <- data.name
 
   # associate freq.max normalized frequency
@@ -636,7 +636,7 @@
   }
 
   # convert data, if necessary, to signalSeries class:
-  x <- create.signalSeries(x)
+  x <- wmtsa::create.signalSeries(x)
 
   # find length of series:
   n.sample <- length(x@data)

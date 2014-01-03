@@ -58,7 +58,7 @@ the usefulness of scaled asinh plots.
 \code{\link{hurstBlock}}.}
 
 \examples{
-hurstACVF(nile, Ascale=1000000, lag.min=3, lag.max=68)
+hurstACVF(wmtsa::nile, Ascale=1000000, lag.min=3, lag.max=68)
 }
 \keyword{univar}
 \keyword{models}

@@ -17,11 +17,11 @@
   checkVectorType(x,"numeric")
   checkScalarType(order,"integer")
 
-  as.vector(.Call( "RS_fractal_filter_median",
-    x, order,
-    COPY=rep(FALSE,2),
-    CLASSES=c("matrix", "integer"),
-    PACKAGE="ifultools"))
+  as.vector(itCall( "RS_fractal_filter_median",
+    x, order))
+    #COPY=rep(FALSE,2),
+    #CLASSES=c("matrix", "integer"),
+    #PACKAGE="ifultools"))
 }
 
 ###
@@ -60,7 +60,7 @@
   if (noise.dimension >= dimension)
     stop("Input noise.dimension must be less than the embedding dimension")
 
-  as.vector(.Call("RS_fractal_filter_nonlinear_local_projection",
+  as.vector(itCall("RS_fractal_filter_nonlinear_local_projection",
     as.matrix(x),
     as.integer(dimension),
     as.integer(tlag),
@@ -68,8 +68,8 @@
     max.distance,
     mutilsDistanceMetric(metric),
     as.integer(noise.dimension),
-    corr.curve,
-    COPY=rep(FALSE,8),
-    CLASSES=c("matrix",rep("integer",3),"numeric",rep("integer",2),"logical"),
-    PACKAGE="ifultools"))
+    corr.curve))
+    #COPY=rep(FALSE,8),
+    #CLASSES=c("matrix",rep("integer",3),"numeric",rep("integer",2),"logical"),
+    #PACKAGE="ifultools"))
  }

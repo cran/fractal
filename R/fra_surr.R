@@ -42,8 +42,8 @@
     # calculate the spectral density function
     if (is.null(sdf)){
 
-      h   <- taper(type="sine", n.taper=min(c(5,n.sample)), n.sample=n.sample, normalize=TRUE)
-      sdf <- Re(SDF(x, recenter=TRUE, taper=h, method="multitaper"))
+      h   <- sapa::taper(type="sine", n.taper=min(c(5,n.sample)), n.sample=n.sample, normalize=TRUE)
+      sdf <- Re(sapa::SDF(x, recenter=TRUE, taper.=h, method="multitaper"))
     }
 
     if (!is(sdf,"SDF"))
@@ -63,11 +63,11 @@
     # the sampling interval since the C-code
     # assumes a unit sampling interval
     S <- matrix(as.vector(sdf)) / attr(sdf, "deltat")
-    z <- as.vector(.Call("RS_fractal_bootstrap_circulant_embedding",
-      S, as.integer(seed),
-      COPY=rep(FALSE,2),
-      CLASSES=c("matrix","integer"),
-      PACKAGE="ifultools"))
+    z <- as.vector(itCall("RS_fractal_bootstrap_circulant_embedding",
+      S, as.integer(seed)))
+      #COPY=rep(FALSE,2),
+      #CLASSES=c("matrix","integer"),
+      #PACKAGE="ifultools"))
 
     # restore mean if recentered
     if (attr(sdf, "recenter"))
@@ -75,17 +75,17 @@
   }
   else if (method == "dh"){
 
-    z <- as.vector(.Call("RS_fractal_bootstrap_davison_hinkley",
-      as.numeric(series), as.integer(seed),
-      COPY=rep(FALSE,2), CLASSES=c("matrix","integer"),
-      PACKAGE="ifultools"))
+    z <- as.vector(itCall("RS_fractal_bootstrap_davison_hinkley",
+      as.numeric(series), as.integer(seed)))
+      #COPY=rep(FALSE,2), #CLASSES=c("matrix","integer"),
+      #PACKAGE="ifultools"))
   }
   else{
 
-    z <- as.vector(.Call("RS_fractal_bootstrap_theiler",
-      as.numeric(series), as.integer(ifelse1(method == "phase", 0, 1)), as.integer(seed),
-      COPY=rep(FALSE,3), CLASSES=c("matrix", "integer","integer"),
-      PACKAGE="ifultools"))
+    z <- as.vector(itCall("RS_fractal_bootstrap_theiler",
+      as.numeric(series), as.integer(ifelse1(method == "phase", 0, 1)), as.integer(seed)))
+      #COPY=rep(FALSE,3), #CLASSES=c("matrix", "integer","integer"),
+      #PACKAGE="ifultools"))
   }
 
   # assign class
@@ -259,8 +259,8 @@
 
     main <- "SDF"
 
-    S.series  <- SDF(series, method="multitaper")
-    S.surrog  <- SDF(surrog, method="multitaper")
+    S.series  <- sapa::SDF(series, method="multitaper")
+    S.surrog  <- sapa::SDF(surrog, method="multitaper")
     frequency <- as.vector(attr(S.series,"frequency"))
 
     if (show. == "both"){

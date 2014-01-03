@@ -6,11 +6,15 @@
 # Imports
 ###
 
-importFrom(wmtsa, eda.plot)
+importFrom(scatterplot3d, scatterplot3d)
+importFrom(sapa, SDF, taper, ACVS)
+import(ifultools,splus2R,wmtsa)
 
 ###
 # S3 Generics
 ###
+
+export(eda.plot)
 
 ###
 # R/sysdata.rda Data

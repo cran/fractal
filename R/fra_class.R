@@ -135,7 +135,7 @@
 
   # calculate various statistics on the data
   fits <- apply(stat, MARGIN=2, function(x, scale, fit){
-    linearFit(scale, x, fit=fit, angle=5, aspect=FALSE, method="widest")},
+    linearFit(scale, x, fit=fit, angle.tolerance=5, aspect=FALSE, method="widest")},
 	scale=scale, fit=fit)
 
   # extract slope coefficients
@@ -154,8 +154,8 @@
       good <- which(!is.na(x))
 
       fit <- ifelse1(is.d1,
-      	loess.smooth(x[good], scale[good], eval=length(x[good]), degree=2),
-        loess.smooth(scale[good], x[good], eval=length(x[good]), degree=2))
+      	loess.smooth(x[good], scale[good], evaluation=length(x[good]), degree=2),
+        loess.smooth(scale[good], x[good], evaluation=length(x[good]), degree=2))
 
       # extend the data as needed to maintain same number
       # of points in slope estimate
@@ -754,7 +754,7 @@
       points(xdata, ydata, pch=pch, cex=cex, col=col, ...)
     }
     else
-      invisible(scatterplot3d(as.matrix(z), ...))
+      invisible(scatterplot3d::scatterplot3d(as.matrix(z), ...))
 
     invisible(NULL)
   }
@@ -1101,3 +1101,5 @@
 }
 
 "asVector" <- function(x) if (inherits(x, "signalSeries")) x@data else as.vector(x)
+
+"eda.plot" <- function (x, ...) UseMethod("eda.plot")

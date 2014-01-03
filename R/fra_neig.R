@@ -48,17 +48,17 @@
           "less than the number of rows in the embedding matrix, argument x")
 
   # call the nearest neighbor routine
-  z <- .Call( "RS_fractal_neighbor_find",
+  z <- itCall( "RS_fractal_neighbor_find",
     as.matrix(x),
     as.integer(n.neighbor),
     as.numeric(max.distance),
     mutilsDistanceMetric(metric),
     as.logical(sort.distances),
-    as.integer(olag),
-    COPY=rep(FALSE,6),
-    CLASSES=c("matrix", "integer", "numeric",
-      "integer", "logical", "integer"),
-    PACKAGE="ifultools")
+    as.integer(olag))
+    #COPY=rep(FALSE,6),
+    #CLASSES=c("matrix", "integer", "numeric",
+    #  "integer", "logical", "integer"),
+    #PACKAGE="ifultools")
 
   # map index base 0 to index base 1
   z[[1]] <- z[[1]] + 1

@@ -40,7 +40,7 @@ Long Memory Time Series, \emph{J. Time Series Analysis},
 \code{\link{hurstBlock}}.}
 
 \examples{
-S <- SDF(beamchaos)
+S <- sapa::SDF(beamchaos)
 HDEst(NFT=length(S),as.vector(S))
 }
 \keyword{univar}

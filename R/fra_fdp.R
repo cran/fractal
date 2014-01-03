@@ -30,7 +30,7 @@
     delta   <- delta - ncumsum
 
     # form fdp avcs
-    fdp.acvs <- lmACF(lmModel("fdp",delta=delta, innov=innovations.var),
+    fdp.acvs <- lmACF(lmModel("fdp",delta=delta, innovations.var=innovations.var),
        lag.max=n.sample, type="covariance")@data
 
     # concatenate reversed fdp acvs
@@ -40,10 +40,10 @@
     S <- Re(fft(fdp.acvs, inverse=FALSE))
 
     # use CE method create bootstrap surrogate
-    z <- as.vector(.Call("RS_fractal_bootstrap_circulant_embedding",
-      S, seed,
-      COPY=rep(FALSE,2), CLASSES=c("matrix","integer"),
-      PACKAGE="ifultools"))[seq(n.sample)]
+    z <- as.vector(itCall("RS_fractal_bootstrap_circulant_embedding",
+      S, seed))[seq(n.sample)]
+      #COPY=rep(FALSE,2), #CLASSES=c("matrix","integer"),
+      #PACKAGE="ifultools"))[seq(n.sample)]
 
     if (!ncumsum)
       return(z)
@@ -76,11 +76,10 @@
 
   #TODO: axe this probably: we may only support ce method
   if (method == "cholesky"){
-    z <- as.vector(.Call("RS_fractal_fdp_simulate", delta, innovations.var,
-      COPY = rep(FALSE,2), CLASSES= c("numeric", "numeric"),
-      PACKAGE="ifultools"))
-  }
-  else{
+    z <- as.vector(itCall("RS_fractal_fdp_simulate", delta, innovations.var))
+      #COPY = rep(FALSE,2), #CLASSES= c("numeric", "numeric"),
+      #PACKAGE="ifultools"))
+  } else {
 
     # find unique delta levels and match against
     # original delta vector
@@ -132,7 +131,7 @@
 
   # calculate single-sided SDF estimate with a normalized
   # spectral resolution of 1/N
-  sdf <- SDF(x, method=sdf.method, single.sided=TRUE, npad=length(x), ...)
+  sdf <- sapa::SDF(x, method=sdf.method, single.sided=TRUE, npad=length(x), ...)
 
   # associate freq.max normalized frequency
   # with corresponding index into SDF

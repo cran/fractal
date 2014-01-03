@@ -31,12 +31,12 @@
   	ilag <- 1
 
   	# calculate the delta-epsilon statistics
-    z <- .Call( "RS_fractal_determinism_delta_epsilon",
+    z <- itCall( "RS_fractal_determinism_delta_epsilon",
 	    x, dimension, tlag, olag, ilag,
-	    scale.min, scale.max, resolution, trim,
-	    COPY=rep(FALSE,9),
-	    CLASSES=c("matrix", rep("integer",4), rep("numeric",3), "logical"),
-	    PACKAGE="ifultools")
+	    scale.min, scale.max, resolution, trim)
+	    #COPY=rep(FALSE,9),
+	    #CLASSES=c("matrix", rep("integer",4), rep("numeric",3), "logical"),
+	    #PACKAGE="ifultools")
 
     scale <- z[[1]]
     e     <- z[[2]]
@@ -227,7 +227,7 @@
 
 "plot.determinism" <- function(x, summary.=NULL,
   n.scale=NULL, n.box=NULL, dimension=NULL,
-  col=1, range=0, whisklty=1, boxcol=-1,
+  col=1, range=0, whisklty=1, boxcol=1,
   lwd=2, pch=18, cex=0.8, type="b", ...)
 {
 
@@ -236,24 +236,26 @@
 
   # calculate boxplot statistics
   if (!is.null(attr(x,"summary")))
+  {
     z <- attr(x,"summary")
-  else if (is.null(summary.) || !is(summary.,"summary.determinism"))
+  } else if (is.null(summary.) || !is(summary.,"summary.determinism")) {
     z <- summary(x, n.scale=n.scale, n.box=n.box, dimension=dimension)
-  else
+  } else {
     z <- summary.
+  }
 
   nc <- floor(sqrt(z$dimension))
   nr <- ceiling(z$dimension/nc)
 
   for (i in seq(z$dimension)){
 
-  	if (i == 1){
-
-  		old.plt <- splitplot(nr, nc, i)
+  	if (i == 1)
+    {
+  	  old.plt <- splitplot(nr, nc, i)
   	  on.exit(par(old.plt))
-  	}
-  	else
+  	} else {
   	  splitplot(nr, nc, i)
+    }
 
     main <- paste(
       ifelse1(z$pass$extreme[i] == z$pass$quartile[i], "", paste(z$pass$extreme[i],"%-", sep="")),

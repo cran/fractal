@@ -49,7 +49,7 @@ Applications}, 177--217, Birkhauser, Boston.
 \code{\link{hurstBlock}}, \code{\link{hurstACVF}}, \code{\link{dispersion}}.}
 
 \examples{
-RoverS(ocean)
+RoverS(wmtsa::ocean)
 }
 \keyword{univar}
 \keyword{models}

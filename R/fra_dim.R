@@ -46,10 +46,10 @@
   tlag      <- xatt$tlag
 
   # calculate the correlation summation
-  z <- .Call( "RS_fractal_dimension_correlation_summation",
-    as.matrix(x), dimension, tlag, olag, resolution,
-    COPY=rep(FALSE,5), CLASSES=c("matrix",rep("integer",4)),
-    PACKAGE="ifultools")
+  z <- itCall( "RS_fractal_dimension_correlation_summation",
+    as.matrix(x), dimension, tlag, olag, resolution)
+    #COPY=rep(FALSE,5), #CLASSES=c("matrix",rep("integer",4)),
+    #PACKAGE="ifultools")
 
   # correlation summations greater than unity
   # are a flag for scales that contain no data.
@@ -105,11 +105,11 @@
     stop("Maximal embedding dimensio must be greater than two")
 
 
-  z <- .Call( "RS_fractal_dimension_information",
+  z <- itCall( "RS_fractal_dimension_information",
     as.numeric(x), as.integer(dimension), as.integer(tlag), as.integer(olag), as.integer(n.density),
-    mutilsDistanceMetric(metric), as.integer(max.neighbors), as.integer(n.reference),
-    COPY=rep(FALSE,8), CLASSES=c("matrix", rep("integer", 7)),
-    PACKAGE="ifultools")
+    mutilsDistanceMetric(metric), as.integer(max.neighbors), as.integer(n.reference))
+    #COPY=rep(FALSE,8), #CLASSES=c("matrix", rep("integer", 7)),
+    #PACKAGE="ifultools")
 
   chaoticInvariant(z,
     dimension   = seq(2,dimension),
@@ -162,10 +162,10 @@
 
     N <- length(x)
 
-    z <- .Call( "RS_fractal_embed",
-      as.numeric(x), as.integer(dimension), as.integer(tlag),
-      COPY=rep(FALSE,3), CLASSES=c("matrix", "integer", "integer"),
-      PACKAGE="ifultools")
+    z <- itCall( "RS_fractal_embed",
+      as.numeric(x), as.integer(dimension), as.integer(tlag))
+      #COPY=rep(FALSE,3), #CLASSES=c("matrix", "integer", "integer"),
+      #PACKAGE="ifultools")
 
     dimension <- ncol(z)
     n.embed   <- nrow(z)
@@ -219,11 +219,11 @@
   checkScalarType(atol,"numeric")
   checkScalarType(olag,"integer")
 
-  z <- .Call( "RS_fractal_dimension_false_nearest_neighbors",
-    asVector(x), as.integer(dimension), as.integer(tlag), as.integer(olag), as.numeric(rtol), as.numeric(atol),
-    COPY=rep(FALSE,6),
-    CLASSES=c("matrix", rep("integer", 3), rep("numeric", 2)),
-    PACKAGE="ifultools")
+  z <- itCall( "RS_fractal_dimension_false_nearest_neighbors",
+    asVector(x), as.integer(dimension), as.integer(tlag), as.integer(olag), as.numeric(rtol), as.numeric(atol))
+    #COPY=rep(FALSE,6),
+    #CLASSES=c("matrix", rep("integer", 3), rep("numeric", 2)),
+    #PACKAGE="ifultools")
 
   dimnames(z) <- list(c("rtol","atol","combined"), paste("E=",seq(dimension),sep=""))
 
@@ -271,10 +271,10 @@
   if (image.tol	< 0)
     stop("image.tol must be non-negative")
 
-  z <- .Call("RS_fractal_dimension_false_nearest_strands",
-    as.numeric(x), as.integer(dimension), as.integer(tlag), as.integer(olag), as.integer(image.tol), as.numeric(atol),
-    COPY=rep(FALSE,6), CLASSES = c("matrix", rep("integer", 4), "numeric"),
-    PACKAGE="ifultools")
+  z <- itCall("RS_fractal_dimension_false_nearest_strands",
+    as.numeric(x), as.integer(dimension), as.integer(tlag), as.integer(olag), as.integer(image.tol), as.numeric(atol))
+    #COPY=rep(FALSE,6), #CLASSES = c("matrix", rep("integer", 4), "numeric"),
+    #PACKAGE="ifultools")
 
   dimnames(z) <- list(paste("E=",seq(dimension),sep=""), "FNS %")
 
@@ -369,7 +369,7 @@
 
   # estimate the local Lyapunoiv spectrum about
   # each supplied reference
-  z <- .Call( "RS_fractal_local_lyapunov_spectrum",
+  z <- itCall( "RS_fractal_local_lyapunov_spectrum",
     asVector(x),
     as.integer(dimension),
     as.integer(tlag),
@@ -380,10 +380,10 @@
     as.integer(reference),
     as.integer(n.reference),
     mutilsDistanceMetric(metric),
-    as.integer(scale),
-    COPY=rep(FALSE,11),
-    CLASSES=c("matrix", rep("integer", 3), "numeric", rep("integer", 5), "matrix"),
-    PACKAGE="ifultools")
+    as.integer(scale))
+    #COPY=rep(FALSE,11),
+    #CLASSES=c("matrix", rep("integer", 3), "numeric", rep("integer", 5), "matrix"),
+    #PACKAGE="ifultools")
 
   nms <- list(reference,scale)
   z <- lapply(z,
@@ -427,13 +427,13 @@
   extrema <- match.arg(extrema, c("min","max","all"))
 
   # calculate Poincare map via extrema
-  z <- .Call( "RS_fractal_poincare_map",
+  z <- itCall( "RS_fractal_poincare_map",
     as.matrix(as.double(x)),
     as.integer(switch(extrema, min=0, max=1, all=2)),
-    as.logical(denoise),
-    COPY=rep(FALSE,3),
-    CLASSES=c("matrix","integer","logical"),
-    PACKAGE="ifultools")
+    as.logical(denoise))
+    #COPY=rep(FALSE,3),
+    #CLASSES=c("matrix","integer","logical"),
+    #PACKAGE="ifultools")
 
   z <- lapply(z, as.vector)
   names(z) <- c("location","amplitude")
@@ -482,15 +482,15 @@
   olags   <- seq(olag.max)
 
   # call wrapper function
-  z <- t(.Call( "RS_fractal_space_time_separation_plot",
+  z <- t(itCall( "RS_fractal_space_time_separation_plot",
     as.matrix(x),
     as.integer(dimension),
     as.integer(tlag),
     as.matrix(as.integer(olags)),
-    as.numeric(probability),
-    COPY=rep(FALSE,5),
-    CLASSES=c("matrix","integer","integer","matrix","numeric"),
-    PACKAGE="ifultools")[[2]])
+    as.numeric(probability))[[2]])
+    #COPY=rep(FALSE,5),
+    #CLASSES=c("matrix","integer","integer","matrix","numeric"),
+    #PACKAGE="ifultools")[[2]])
 
   oldClass(z) <- "spaceTime"
 
@@ -514,7 +514,7 @@
   "firstACF" <- function(x, value=0){
 
     # calculate the autocorrelation function
-    s      <- ACVS(x)
+    s      <- sapa::ACVS(x)
     data   <- s / s[1]
     lags   <- seq(0, length(data) - 1)
     icross <- which(data < value)[1]
@@ -561,7 +561,7 @@
   else if (method == "acfnadir"){
 
     # calculate the autocorrelation function
-    s    <- ACVS(x)
+    s    <- sapa::ACVS(x)
     data <- s / s[1]
     lags <- seq(0, length(data) - 1)
 
@@ -571,12 +571,12 @@
 
     # calculate the mutual information for each lag from
     # 1:P where P is the 1.5 times the first nadir of the ACF
-    high <- round(as.numeric(timeLag(x, method="acfnadir", plot=FALSE)) * 1.5)
+    high <- round(as.numeric(timeLag(x, method="acfnadir", plot.data=FALSE)) * 1.5)
     lags <- seq(1, high)
 
-    data <- .Call( "RS_fractal_time_delayed_mutual_information", as.numeric(x), as.integer(lags),
-      COPY=rep(FALSE,2), CLASSES=c("matrix", "matrix"),
-      PACKAGE="ifultools")
+    data <- itCall( "RS_fractal_time_delayed_mutual_information", as.numeric(x), as.integer(lags))
+      #COPY=rep(FALSE,2), #CLASSES=c("matrix", "matrix"),
+      #PACKAGE="ifultools")
     z <- which(as.logical(peaks(-as.vector(data), strict=TRUE)))[1] - 1
   }
 

@@ -46,11 +46,11 @@
     stop("n.grid must be positive")
 
   # estimate the KDE
-  z <- as.vector(.Call("RS_fractal_kernel_density_estimate",
-    x, at,
-    COPY=rep(FALSE,2),
-    CLASSES = rep("matrix", 2),
-    PACKAGE="ifultools"))
+  z <- as.vector(itCall("RS_fractal_kernel_density_estimate",
+    x, at))
+    #COPY=rep(FALSE,2),
+    #CLASSES = rep("matrix", 2),
+    #PACKAGE="ifultools"))
 
   oldClass(z) <- "KDE"
   attr(z, "training")  <- x
@@ -135,13 +135,13 @@
   }
   else if (style == "perspective"){
 
-      persp(interp(at[,1], at[,2], asVector(x)),
+      persp(akima::interp(at[,1], at[,2], asVector(x)),
         xlab=xlab, ylab=ylab, zlab=zlab,
         axes=TRUE, theta=theta, phi=phi,...)
   }
   else if (style == "contour"){
 
-    contour(interp(at[,1], at[,2], asVector(x)),
+    contour(akima::interp(at[,1], at[,2], asVector(x)),
       xlab=xlab, ylab=ylab, ...)
   }
 
