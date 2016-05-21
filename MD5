@@ -1,5 +1,5 @@
-b078c791c3faba9e3765d6b6a6532b6a *DESCRIPTION
-526cbaef552faa682fdede97b380381f *NAMESPACE
+4c2c818f016dfd62ef2fc64d079f84f8 *DESCRIPTION
+e531034a3c5ab2e3ac7c3f18091e921a *NAMESPACE
 4c49aa8c426d2e274d3c0bf7cd52abc6 *R/fra_chaos.R
 f3f38c19339327d1f2a3759c58f3ed43 *R/fra_class.R
 721f84dfce6e974ddf338610eb710908 *R/fra_detm.R
@@ -14,13 +14,13 @@ c2670a6caf105e0e0972e34e4211c436 *R/fra_kde.R
 1d62f234742e08ead9ed5c284f8d3655 *R/fra_stny.R
 a985f47e91c52d3e71254b55add0a613 *R/fra_surr.R
 71135c28398a5b58099e20b857537b58 *R/sysdata.rda
+a2571b51de33b88b41f2e5a5502f5b1e *README.md
 530aacebd1776e982a0b397c3ef5b2bf *inst/bookexams/group-Appendix_A.ssc
 9a55ce6f17cf467d197d85a470115764 *inst/bookexams/group-Chapter_2.ssc
 ee2a5cb3befa023764c0581132720173 *inst/bookexams/group-Chapter_3.ssc
 c0910a762cac3490f304e0b6d27e86ff *inst/bookexams/group-Chapter_4.ssc
 10caf9088a872dff96720714fb932e8f *inst/bookexams/group-Chapter_5.ssc
 836a3eb240906d60de778daf39eac150 *inst/bookexams/group-Chapter_6.ssc
-f6118ebdf47a2ab857832070c0dea2b5 *inst/fractal.chm
 ee6ed3730a2a1e433581b55eecf823a7 *man/DFA.Rd
 0c9468e05089f58e27828853fb6a2b9d *man/FDSimulate.Rd
 c6295cf0ed06af04131ec539be90f048 *man/FDWhittle.Rd
