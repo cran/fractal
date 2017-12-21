@@ -1,6 +1,6 @@
 Package: fractal
-Title: Fractal Time Series Modeling and Analysis
-Version: 2.0-1
+Title: A Fractal Time Series Modeling and Analysis Package
+Version: 2.0-4
 Authors@R: c(person("William", "Constantine", email = "wlbconstan@gmail.com", role = c("cre", "aut")),
              person("Donald", "Percival", email = "dbp@apl.washington.edu", role = "aut"))
 Depends: R (>= 3.0.2), splus2R (>= 1.2-0), ifultools (>= 2.0-0)
@@ -14,8 +14,8 @@ Collate: fra_chaos.R fra_class.R fra_detm.R fra_dim.R fra_fdp.R
         fra_stny.R fra_surr.R fra_pkg.R
 Repository: CRAN
 NeedsCompilation: no
-Packaged: 2016-05-20 20:45:57 UTC; billconstantine
+Packaged: 2017-12-21 06:08:54 UTC; william
 Author: William Constantine [cre, aut],
   Donald Percival [aut]
 Maintainer: William Constantine <wlbconstan@gmail.com>
-Date/Publication: 2016-05-21 00:07:50
+Date/Publication: 2017-12-21 14:20:20 UTC
